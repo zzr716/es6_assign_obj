@@ -1,0 +1,1 @@
+# es6_assign_obj
