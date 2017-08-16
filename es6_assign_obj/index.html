@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let [a, b] = [1, 2];
+        // console.log(a, b);
+        // 为什么要解构？快速地将复杂对象加入到业务之中
+        // let foo = () => {
+        //     return [1, 2, 3];
+        // }
+        // let [a, , b] = foo();
+        // console.log(a, b)
+        // ...作用？ 一展开spread 二聚合reset
+        // let [a, ...b] = [1, 2, 3, 4, 5, 7];
+        // console.log(a, b);
+        // let [,,,a, b] = [1,2,3];
+        // console.log(a, b);
+        // let [a, [b, [c, d]]] = [1, [2, [3, 4]]]
+        // console.log(a, b, c, d) // 1 2 3 4
+        // let {user: x} = {user: 5}
+        // console.log(x) //5
+        // let {user: x} = {user2: 5}
+        // console.log(x) // undefined
+        // var {prop: x, prop2: y} = {prop: 5, prop2: 10}
+        // 要的是变量不是对象 x、y是啥--要定义的变量，prop, prop2是解构的key
+        // var {prop, prop2:nextProp} = {prop: 5, prop2: 10}
+        // console.log(prop, nextProp)
+        // 用户详情页 显示名字 显示头像。。。
+        // ajax {name: '吵吵', age: 21, company: '鹏创科技'}
+        // const {name, age, company} = {name: '吵吵', age: 21, company: '鹏创科技'}
+        // console.log(name, age, company)
+        // const me = Object.freeze({name: 'Jacopo'});
+        // me.age = 28;
+        // console.log(me.age) //undefined
+        // const arr = Object.freeze([-1, 1, 2, 3]);
+        // arr[0] = 0;
+        // console.log(arr); //-1 1 2 3
+        const me = Object.freeze({
+            name: 'Jacopo',
+            pet: {
+                type: 'dog',
+                name: 'Spock'
+            }
+        })
+        // 只能封冻第一层
+        me.pet.type = 'Rocky';
+        me.pet.bread = 'German Shepherd'
+        console.log(me)
+    </script>
+</body>
+</html>
